@@ -16,7 +16,7 @@ bool is_pressed = false;
 //Filter parameters
 float FK = 0.9;
 int tolerance = 3000; //
-int values_count = 10;
+int values_count = 10; //HX711 speed is 80Hz or near this value. To get 10 values the sensor need around 120ms.
 
 long timest = millis();
 
@@ -31,7 +31,6 @@ long getSensorValue() { //
        acc_x_raw = hx711.read();
        acc_x = acc_x_raw - tolerance/1.0;
        acc_xf = (1-FK)*acc_xf + FK*acc_x; 
-       delay(5);
     }
     
     return acc_xf;
