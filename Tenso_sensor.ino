@@ -1,5 +1,7 @@
 #include <Q2HX711.h>
 
+# HX711 Library source https://github.com/ConnectedHealthFoundry/Q2HX711
+
 const bool DEBUG = false;
 
 const byte hx711_data_pin = A2;
@@ -16,7 +18,7 @@ bool is_pressed = false;
 //Filter parameters
 float FK = 0.9;
 int tolerance = 3000; //
-int values_count = 10; //HX711 speed is 80Hz or near this value. To get 10 values the sensor need around 120ms.
+int values_count = 5; //HX711 speed is 80Hz or near this value. To get 10 values the sensor need around 120ms.
 
 long timest = millis();
 
